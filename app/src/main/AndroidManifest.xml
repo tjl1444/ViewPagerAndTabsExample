@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.crazydudes.viewpagerexample" >
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- the manifest povider entry, this is where we let the application know
+        that we will be implmenting our own content provider. exported:false means
+        that we won't be letting any other applicatino access this database -->
+        <provider
+            android:authorities="com.crazydudes.viewpagerexample"
+            android:name=".data.PagerContentProvider"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.crazydudes.viewpagerexample.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
